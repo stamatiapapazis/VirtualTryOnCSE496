@@ -16,12 +16,12 @@ import {
 
     let mediaStream = await navigator.mediaDevices.getUserMedia({
         video: {
-            facingMode: 'environment'
+            facingMode: 'user'
         }
     });
 
     const source = createMediaStreamSource(mediaStream, {
-        cameraType: 'back'
+        cameraType: 'front'
     })
 
     await session.setSource(source)
