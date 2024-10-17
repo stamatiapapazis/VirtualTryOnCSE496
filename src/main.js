@@ -121,7 +121,7 @@ import {
         })
 
         await session.setSource(source)
-        session.source.setRenderSize(500, 500)
+        session.source.setRenderSize(500, 700)
         session.play()
 
         document.getElementById('GreenFITShirt').addEventListener('click', () => {
