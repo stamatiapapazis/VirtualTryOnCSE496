@@ -12,6 +12,7 @@ import {
 
     const path = window.location.pathname;
     if (path === '/') {
+        console.log('testing')
         document.getElementById('TShirtButton').addEventListener('click', () => {
             window.location.href = 'docs/TShirts.html';
         });
