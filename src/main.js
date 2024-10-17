@@ -51,7 +51,7 @@ import {
         session.play()
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[3]);
         });
 
         document.getElementById('GreyTShirt').addEventListener('click', () => {
@@ -59,7 +59,7 @@ import {
         });
 
         document.getElementById('WhiteTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[2]);
+            session.applyLens(lenses[0]);
         });
     }
 
