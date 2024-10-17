@@ -14,15 +14,15 @@ import {
     if (path === '/') {
         console.log('testing')
         document.getElementById('TShirtButton').addEventListener('click', () => {
-            window.location.href = 'TShirts.html';
+            window.location.href = '/TShirts.html';
         });
 
         document.getElementById('SweatshirtButton').addEventListener('click', () => {
-            window.location.href = 'Sweatshirts.html';
+            window.location.href = '/Sweatshirts.html';
         });
 
         document.getElementById('HoodieButton').addEventListener('click', () => {
-            window.location.href = 'Hoodies.html';
+            window.location.href = '/Hoodies.html';
         });
     }
 
