@@ -86,15 +86,15 @@ import {
         session.source.setRenderSize(500, 500)
         session.play()
 
-        document.getElementById('RedTShirt').addEventListener('click', () => {
+        document.getElementById('RedSweatshirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
         });
 
-        document.getElementById('GreyTShirt').addEventListener('click', () => {
+        document.getElementById('GreySweatshirt').addEventListener('click', () => {
             session.applyLens(lenses[1]);
         });
 
-        document.getElementById('WhiteTShirt').addEventListener('click', () => {
+        document.getElementById('WhiteSweatshirt').addEventListener('click', () => {
             session.applyLens(lenses[2]);
         });
     }
@@ -123,15 +123,15 @@ import {
         session.source.setRenderSize(500, 500)
         session.play()
 
-        document.getElementById('RedTShirt').addEventListener('click', () => {
+        document.getElementById('RedHoodie').addEventListener('click', () => {
             session.applyLens(lenses[0]);
         });
 
-        document.getElementById('GreyTShirt').addEventListener('click', () => {
+        document.getElementById('GreyHoodie').addEventListener('click', () => {
             session.applyLens(lenses[2]);
         });
 
-        document.getElementById('WhiteTShirt').addEventListener('click', () => {
+        document.getElementById('WhiteHoodie').addEventListener('click', () => {
             session.applyLens(lenses[1]);
         });
     }
