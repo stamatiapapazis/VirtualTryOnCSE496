@@ -69,9 +69,9 @@ import {
         const session = await cameraKit.createSession()
         document.getElementById('canvas').replaceWith(session.output.live)
 
-        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['10715257-0fb4-4e6d-96a6-62185e12e129'])
+        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['024cac86-11bb-4278-a15b-624766b19f24'])
 
-        session.applyLens(lenses[1])
+        session.applyLens(lenses[0])
 
         let mediaStream = await navigator.mediaDevices.getUserMedia({
             video: {
@@ -87,16 +87,16 @@ import {
         session.source.setRenderSize(500, 500)
         session.play()
 
-        document.getElementById('GreenFITShirt').addEventListener('click', () => {
-            session.applyLens(lenses[2]);
-        });
-
-        document.getElementById('PinkFITShirt').addEventListener('click', () => {
-            session.applyLens(lenses[3]);
-        });
-
-        document.getElementById('WhiteSBUShirt').addEventListener('click', () => {
+        document.getElementById('RedTShirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
+        });
+
+        document.getElementById('GreyTShirt').addEventListener('click', () => {
+            session.applyLens(lenses[1]);
+        });
+
+        document.getElementById('WhiteTShirt').addEventListener('click', () => {
+            session.applyLens(lenses[2]);
         });
     }
 
@@ -108,7 +108,7 @@ import {
 
         const { lenses } = await cameraKit.lensRepository.loadLensGroups(['10715257-0fb4-4e6d-96a6-62185e12e129'])
 
-        session.applyLens(lenses[1])
+        session.applyLens(lenses[0])
 
         let mediaStream = await navigator.mediaDevices.getUserMedia({
             video: {
@@ -121,19 +121,19 @@ import {
         })
 
         await session.setSource(source)
-        session.source.setRenderSize(500, 1000)
+        session.source.setRenderSize(500, 500)
         session.play()
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[2]);
+            session.applyLens(lenses[0]);
         });
 
         document.getElementById('GreyTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[3]);
+            session.applyLens(lenses[2]);
         });
 
         document.getElementById('WhiteTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[1]);
         });
     }
 
