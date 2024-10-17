@@ -51,15 +51,15 @@ import {
         session.play()
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[3]);
+            session.applyLens(lenses[0]);
         });
 
         document.getElementById('GreyTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[1]);
+            session.applyLens(lenses[2]);
         });
 
         document.getElementById('WhiteTShirt').addEventListener('click', () => {
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[1]);
         });
     }
 
