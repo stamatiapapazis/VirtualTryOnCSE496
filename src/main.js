@@ -124,15 +124,15 @@ import {
         session.source.setRenderSize(500, 1000)
         session.play()
 
-        document.getElementById('GreenFITShirt').addEventListener('click', () => {
+        document.getElementById('RedTShirt').addEventListener('click', () => {
             session.applyLens(lenses[2]);
         });
 
-        document.getElementById('PinkFITShirt').addEventListener('click', () => {
+        document.getElementById('GreyTShirt').addEventListener('click', () => {
             session.applyLens(lenses[3]);
         });
 
-        document.getElementById('WhiteSBUShirt').addEventListener('click', () => {
+        document.getElementById('WhiteTShirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
         });
     }
