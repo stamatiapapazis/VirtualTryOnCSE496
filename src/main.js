@@ -70,7 +70,7 @@ import {
 
         const { lenses } = await cameraKit.lensRepository.loadLensGroups(['024cac86-11bb-4278-a15b-624766b19f24'])
 
-        session.applyLens(lenses[0])
+        session.applyLens(lenses[2])
 
         let mediaStream = await navigator.mediaDevices.getUserMedia({
             video: {
@@ -87,7 +87,7 @@ import {
         session.play()
 
         document.getElementById('RedSweatshirt').addEventListener('click', () => {
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[2]);
         });
 
         document.getElementById('GreySweatshirt').addEventListener('click', () => {
@@ -95,7 +95,7 @@ import {
         });
 
         document.getElementById('WhiteSweatshirt').addEventListener('click', () => {
-            session.applyLens(lenses[2]);
+            session.applyLens(lenses[0]);
         });
     }
 
