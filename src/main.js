@@ -13,15 +13,15 @@ import {
     const path = window.location.pathname;
     if (path === '/') {
         document.getElementById('TShirtButton').addEventListener('click', () => {
-            window.location.href = 'TShirts.html';
+            window.location.href = 'docs/TShirts.html';
         });
 
         document.getElementById('SweatshirtButton').addEventListener('click', () => {
-            window.location.href = 'Sweatshirts.html';
+            window.location.href = 'docs/Sweatshirts.html';
         });
 
         document.getElementById('HoodieButton').addEventListener('click', () => {
-            window.location.href = 'Hoodies.html';
+            window.location.href = 'docs/Hoodies.html';
         });
     }
 
