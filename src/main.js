@@ -124,7 +124,7 @@ import {
 
         const { lenses } = await cameraKit.lensRepository.loadLensGroups(['70fae489-5e08-45f1-9723-968db5e445a0'])
 
-        session.applyLens(lenses[0])
+        session.applyLens(lenses[1])
 
         let mediaStream = await navigator.mediaDevices.getUserMedia({
             video: {
@@ -141,7 +141,7 @@ import {
         session.play()
 
         document.getElementById('RedHoodie').addEventListener('click', () => {
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[1]);
         });
 
         document.getElementById('GreyHoodie').addEventListener('click', () => {
@@ -149,7 +149,7 @@ import {
         });
 
         document.getElementById('WhiteHoodie').addEventListener('click', () => {
-            session.applyLens(lenses[1]);
+            session.applyLens(lenses[0]);
         });
     }
 
