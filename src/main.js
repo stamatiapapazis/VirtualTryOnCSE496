@@ -51,7 +51,7 @@ import {
         })
 
         await session.setSource(source)
-        session.source.setRenderSize(500, 1000)
+        session.source.setRenderSize(500, 800)
         session.play()
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
@@ -94,7 +94,7 @@ import {
         })
 
         await session.setSource(source)
-        session.source.setRenderSize(500, 1000)
+        session.source.setRenderSize(500, 800)
         session.play()
 
         document.getElementById('RedSweatshirt').addEventListener('click', () => {
@@ -137,7 +137,7 @@ import {
         })
 
         await session.setSource(source)
-        session.source.setRenderSize(500, 1000)
+        session.source.setRenderSize(500, 800)
         session.play()
 
         document.getElementById('RedHoodie').addEventListener('click', () => {
