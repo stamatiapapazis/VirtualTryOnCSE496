@@ -54,22 +54,6 @@ import {
         session.source.setRenderSize(500, 800)
         session.play()
 
-        document.getElementById('FrontCameraButton').addEventListener('click', () => {
-            navigator.mediaDevices.getUserMedia({
-                video: {
-                    facingMode: 'user'
-                }
-            });
-        });
-
-        document.getElementById('BackCameraButton').addEventListener('click', () => {
-            navigator.mediaDevices.getUserMedia({
-                video: {
-                    facingMode: 'environment'
-                }
-            });
-        });
-
         document.getElementById('RedTShirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
         });
