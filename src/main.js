@@ -40,19 +40,38 @@ import {
 
         session.applyLens(lenses[0])
 
-        let mediaStream = await navigator.mediaDevices.getUserMedia({
-            video: {
-                facingMode: 'user'
+        const startCamera = async (facingMode) => {
+            let mediaStream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: facingMode
+                }
+            });
+
+            let cameraType;
+            if (facingMode === 'user') {
+                cameraType = 'front';
             }
+            else {
+                cameraType = 'back';
+            }
+
+            const source = createMediaStreamSource(mediaStream, {
+                cameraType: cameraType
+            });
+
+            await session.setSource(source)
+            session.source.setRenderSize(500, 800)
+            session.play()
+        };
+        await startCamera('user')
+
+        document.getElementById('FrontCameraButton').addEventListener('click', async () => {
+            await startCamera('user')
         });
 
-        const source = createMediaStreamSource(mediaStream, {
-            cameraType: 'front'
-        })
-
-        await session.setSource(source)
-        session.source.setRenderSize(500, 800)
-        session.play()
+        document.getElementById('BackCameraButton').addEventListener('click', async () => {
+            await startCamera('environment')
+        });
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
