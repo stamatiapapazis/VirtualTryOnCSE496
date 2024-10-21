@@ -66,11 +66,13 @@ import {
         await startCamera('user')
 
         document.getElementById('FrontCameraButton').addEventListener('click', async () => {
-            await startCamera('user')
+            await startCamera('user');
+            session.applyLens(lenses[0]);
         });
 
         document.getElementById('BackCameraButton').addEventListener('click', async () => {
-            await startCamera('environment')
+            await startCamera('environment');
+            session.applyLens(lenses[0]);
         });
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
