@@ -60,9 +60,6 @@ import {
                     facingMode: 'user'
                 }
             });
-            createMediaStreamSource(mediaStream, {
-                cameraType: 'front'
-            })
         });
 
         document.getElementById('BackCameraButton').addEventListener('click', () => {
@@ -71,9 +68,6 @@ import {
                     facingMode: 'environment'
                 }
             });
-            createMediaStreamSource(mediaStream, {
-                cameraType: 'back'
-            })
         });
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
