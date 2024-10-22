@@ -40,6 +40,9 @@ import {
 
         session.applyLens(lenses[0])
 
+        let currentFacingMode = 'user';
+        let currentCameraType = 'front';
+
         const startCamera = async (facingMode, cameraType) => {
             let mediaStream = await navigator.mediaDevices.getUserMedia({
                 video: {
