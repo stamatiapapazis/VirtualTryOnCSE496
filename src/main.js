@@ -103,7 +103,7 @@ import {
         const session = await cameraKit.createSession()
         document.getElementById('canvas').replaceWith(session.output.live)
 
-        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['10715257-0fb4-4e6d-96a6-62185e12e129'])
+        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['024cac86-11bb-4278-a15b-624766b19f24'])
 
         session.applyLens(lenses[0])
 
@@ -170,7 +170,7 @@ import {
         const session = await cameraKit.createSession()
         document.getElementById('canvas').replaceWith(session.output.live)
 
-        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['10715257-0fb4-4e6d-96a6-62185e12e129'])
+        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['70fae489-5e08-45f1-9723-968db5e445a0'])
 
         session.applyLens(lenses[0])
 
