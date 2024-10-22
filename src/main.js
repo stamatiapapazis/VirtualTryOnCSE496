@@ -210,7 +210,7 @@ import {
         });
 
         document.getElementById('RedHoodie').addEventListener('click', () => {
-            session.applyLens(lenses[1]);
+            session.applyLens(lenses[0]);
             currentLens = 1;
         });
 
@@ -220,7 +220,7 @@ import {
         });
 
         document.getElementById('WhiteHoodie').addEventListener('click', () => {
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[1]);
             currentLens = 0;
         });
     }
