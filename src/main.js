@@ -105,7 +105,7 @@ import {
 
         const { lenses } = await cameraKit.lensRepository.loadLensGroups(['024cac86-11bb-4278-a15b-624766b19f24'])
 
-        session.applyLens(lenses[0])
+        session.applyLens(lenses[2])
 
         let currentFacingMode = 'user';
         let currentCameraType = 'front';
@@ -172,7 +172,7 @@ import {
 
         const { lenses } = await cameraKit.lensRepository.loadLensGroups(['70fae489-5e08-45f1-9723-968db5e445a0'])
 
-        session.applyLens(lenses[0])
+        session.applyLens(lenses[1])
 
         let currentFacingMode = 'user';
         let currentCameraType = 'front';
