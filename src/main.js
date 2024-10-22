@@ -103,34 +103,58 @@ import {
         const session = await cameraKit.createSession()
         document.getElementById('canvas').replaceWith(session.output.live)
 
-        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['024cac86-11bb-4278-a15b-624766b19f24'])
+        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['10715257-0fb4-4e6d-96a6-62185e12e129'])
 
-        session.applyLens(lenses[2])
+        session.applyLens(lenses[0])
 
-        let mediaStream = await navigator.mediaDevices.getUserMedia({
-            video: {
-                facingMode: 'user'
+        let currentFacingMode = 'user';
+        let currentCameraType = 'front';
+        let currentLens = 2;
+
+        const startCamera = async (facingMode, cameraType) => {
+            let mediaStream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: facingMode
+                }
+            });
+
+
+            const source = createMediaStreamSource(mediaStream, {
+                cameraType: cameraType
+            });
+
+            await session.setSource(source)
+            session.source.setRenderSize(500, 800)
+            session.play()
+        };
+        await startCamera('user', 'front')
+
+        document.getElementById('SwitchCameraButton').addEventListener('click', async () => {
+            if (currentFacingMode === 'user') {
+                currentFacingMode = 'environment';
+                currentCameraType = 'back';
             }
+            else {
+                currentFacingMode = 'user';
+                currentCameraType = 'front'
+            }
+            await startCamera(currentFacingMode, currentCameraType);
+            session.applyLens(lenses[currentLens]);
         });
-
-        const source = createMediaStreamSource(mediaStream, {
-            cameraType: 'front'
-        })
-
-        await session.setSource(source)
-        session.source.setRenderSize(500, 800)
-        session.play()
 
         document.getElementById('RedSweatshirt').addEventListener('click', () => {
             session.applyLens(lenses[2]);
+            currentLens = 2;
         });
 
         document.getElementById('GreySweatshirt').addEventListener('click', () => {
             session.applyLens(lenses[1]);
+            currentLens = 1;
         });
 
         document.getElementById('WhiteSweatshirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
+            currentLens = 0;
         });
     }
 
@@ -146,34 +170,58 @@ import {
         const session = await cameraKit.createSession()
         document.getElementById('canvas').replaceWith(session.output.live)
 
-        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['70fae489-5e08-45f1-9723-968db5e445a0'])
+        const { lenses } = await cameraKit.lensRepository.loadLensGroups(['10715257-0fb4-4e6d-96a6-62185e12e129'])
 
-        session.applyLens(lenses[1])
+        session.applyLens(lenses[0])
 
-        let mediaStream = await navigator.mediaDevices.getUserMedia({
-            video: {
-                facingMode: 'user'
+        let currentFacingMode = 'user';
+        let currentCameraType = 'front';
+        let currentLens = 1;
+
+        const startCamera = async (facingMode, cameraType) => {
+            let mediaStream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: facingMode
+                }
+            });
+
+
+            const source = createMediaStreamSource(mediaStream, {
+                cameraType: cameraType
+            });
+
+            await session.setSource(source)
+            session.source.setRenderSize(500, 800)
+            session.play()
+        };
+        await startCamera('user', 'front')
+
+        document.getElementById('SwitchCameraButton').addEventListener('click', async () => {
+            if (currentFacingMode === 'user') {
+                currentFacingMode = 'environment';
+                currentCameraType = 'back';
             }
+            else {
+                currentFacingMode = 'user';
+                currentCameraType = 'front'
+            }
+            await startCamera(currentFacingMode, currentCameraType);
+            session.applyLens(lenses[currentLens]);
         });
-
-        const source = createMediaStreamSource(mediaStream, {
-            cameraType: 'front'
-        })
-
-        await session.setSource(source)
-        session.source.setRenderSize(500, 800)
-        session.play()
 
         document.getElementById('RedHoodie').addEventListener('click', () => {
             session.applyLens(lenses[1]);
+            currentLens = 1;
         });
 
         document.getElementById('GreyHoodie').addEventListener('click', () => {
             session.applyLens(lenses[2]);
+            currentLens = 2;
         });
 
         document.getElementById('WhiteHoodie').addEventListener('click', () => {
             session.applyLens(lenses[0]);
+            currentLens = 0;
         });
     }
 
