@@ -40,20 +40,13 @@ import {
 
         session.applyLens(lenses[0])
 
-        const startCamera = async (facingMode) => {
+        const startCamera = async (facingMode, cameraType) => {
             let mediaStream = await navigator.mediaDevices.getUserMedia({
                 video: {
                     facingMode: facingMode
                 }
             });
 
-            let cameraType;
-            if (facingMode === 'user') {
-                cameraType = 'front';
-            }
-            else {
-                cameraType = 'back';
-            }
 
             const source = createMediaStreamSource(mediaStream, {
                 cameraType: cameraType
@@ -63,15 +56,18 @@ import {
             session.source.setRenderSize(500, 800)
             session.play()
         };
-        await startCamera('user')
+        await startCamera('user', 'front')
 
-        document.getElementById('FrontCameraButton').addEventListener('click', async () => {
-            await startCamera('user');
-            session.applyLens(lenses[0]);
-        });
-
-        document.getElementById('BackCameraButton').addEventListener('click', async () => {
-            await startCamera('environment');
+        document.getElementById('SwitchCameraButton').addEventListener('click', async () => {
+            if (currentFacingMode === 'user') {
+                currentFacingMode = 'environment';
+                currentCameraType = 'back';
+            }
+            else {
+                currentFacingMode = 'user';
+                currentCameraType = 'front'
+            }
+            await startCamera(currentFacingMode, currentCameraType);
             session.applyLens(lenses[0]);
         });
 
