@@ -42,6 +42,7 @@ import {
 
         let currentFacingMode = 'user';
         let currentCameraType = 'front';
+        let currentLens = 0;
 
         const startCamera = async (facingMode, cameraType) => {
             let mediaStream = await navigator.mediaDevices.getUserMedia({
@@ -71,19 +72,22 @@ import {
                 currentCameraType = 'front'
             }
             await startCamera(currentFacingMode, currentCameraType);
-            session.applyLens(lenses[0]);
+            session.applyLens(lenses[currentLens]);
         });
 
         document.getElementById('RedTShirt').addEventListener('click', () => {
             session.applyLens(lenses[0]);
+            currentLens = 0;
         });
 
         document.getElementById('GreyTShirt').addEventListener('click', () => {
             session.applyLens(lenses[2]);
+            currentLens = 2;
         });
 
         document.getElementById('WhiteTShirt').addEventListener('click', () => {
             session.applyLens(lenses[1]);
+            currentLens = 1;
         });
     }
 
