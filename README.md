@@ -1,5 +1,5 @@
 # SBU/FIT Virtual Try On
-This web-based application was developed as part of my Senior Honors Thesis at Stony Brook University's Department of Computer Science for the Loop for Good 2024 Annual Sustainable Design Exhibition at the Fashion Institute of Technology, State University of New York and showcased in The Marvin Feldman Center Lobby (243 W 27th St, NYC).
+This web-based application was developed as part of my Senior Honors Thesis in Stony Brook University's Department of Computer Science. It was used in the Loop for Good 2024 Annual Sustainable Design Exhibition at the Fashion Institute of Technology, State University of New York and showcased in The Marvin Feldman Center Lobby (243 W 27th St, NYC).
 
 ## Features
 - **Virtual 3D Clothing Try-On**: Try on 3-dimensional articles of clothing virtually using your device's camera.
